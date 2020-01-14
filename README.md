@@ -1,4 +1,4 @@
-#react-typescript-babel-demo
+# react-typescript-babel-demo
 
 ## `yarn start`
 
