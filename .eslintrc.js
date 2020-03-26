@@ -13,6 +13,13 @@ module.exports = {
         'prettier',
         'prettier/react',
     ],
+    settings: {
+        'import/resolver': {
+            typescript: {
+                directory: [resolve('./tsconfig.json')],
+            },
+        },
+    },
     globals: {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -27,6 +34,7 @@ module.exports = {
     },
     plugins: ['react', '@typescript-eslint'],
     rules: {
+        'import/extensions': [2, 'ignorePackages', { ts: 'never', tsx: 'never', json: 'never', js: 'never' }],
         'no-useless-constructor': 'off',
         'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
         'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
@@ -53,13 +61,6 @@ module.exports = {
                 'prettier/react',
                 'prettier/@typescript-eslint',
             ],
-            settings: {
-                'import/resolver': {
-                    typescript: {
-                        directory: [resolve('./tsconfig.json')],
-                    },
-                },
-            },
             rules: {
                 'import/extensions': [2, 'ignorePackages', { ts: 'never', tsx: 'never', json: 'never', js: 'never' }],
                 'no-useless-constructor': 'off',
