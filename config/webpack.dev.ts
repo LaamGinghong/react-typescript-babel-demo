@@ -10,6 +10,9 @@ import { PROJECT_ROOT } from '../constant/env'
 const devConfig: Configuration = {
     mode: 'development',
     entry: ['react-hot-loader/patch', resolve(PROJECT_ROOT, 'src', 'index.tsx')],
+    module: {
+        rules: [{ test: /\.js$/, enforce: 'pre', loader: 'source-map-loader' }],
+    },
     plugins: [
         new ForkTsCheckerWebpackPlugin({ memoryLimit: 1024, tsconfig: resolve(PROJECT_ROOT, 'tsconfig.json') }),
         new ErrorOverlayWebpackPlugin(),
