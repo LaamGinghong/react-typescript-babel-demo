@@ -11,7 +11,11 @@ module.exports = function (api) {
     api.cache(true)
     return {
         presets: ['@babel/preset-typescript', envPreset],
-        plugins: ['@babel/plugin-transform-runtime'],
+        plugins: [
+            '@babel/plugin-transform-runtime',
+            ['@babel/plugin-proposal-decorators', { legacy: true }],
+            ['@babel/plugin-proposal-class-properties', { loose: true }],
+        ],
         env: {
             development: {
                 presets: [['@babel/preset-react', { development: true }]],
