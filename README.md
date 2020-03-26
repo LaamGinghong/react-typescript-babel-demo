@@ -1,5 +1,2 @@
-# react-typescript-babel-demo
-
-## `yarn start`
-
-## `yarn build`
+# REACT TYPESCRIPT BABEL DEMO
+ 
